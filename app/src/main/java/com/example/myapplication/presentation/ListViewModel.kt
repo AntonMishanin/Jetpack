@@ -1,14 +1,19 @@
 package com.example.myapplication.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.myapplication.domain.Pokemon
+import com.example.myapplication.data.Repository
+import com.example.myapplication.domain.entity.Pokemon
+import com.example.myapplication.domain.entity.PokemonNetworkEntity
 
 class ListViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
 
-    val user: LiveData<Pokemon> = getPokemon()
+    private val repository = Repository()
+
+    val user: LiveData<PokemonNetworkEntity> = repository.requestPokemonList()
 
     private fun getPokemon(): LiveData<Pokemon>{
         val pokemon = Pokemon()
@@ -16,6 +21,9 @@ class ListViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
 
         val data = MutableLiveData<Pokemon>()
         data.value = pokemon
+
+        val liveDate = repository.requestPokemonList()
+        Log.d("TAG", "liveDate.count = ${liveDate.value?.next}")
 
         return data
     }

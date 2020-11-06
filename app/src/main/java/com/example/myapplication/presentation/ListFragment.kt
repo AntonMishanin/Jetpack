@@ -28,7 +28,7 @@ class ListFragment : Fragment() {
 
         viewModel.user.observe(viewLifecycleOwner) {
             val pokemonNameView = view.findViewById<TextView>(R.id.textView_pokemon_name)
-            pokemonNameView.text = it.name
+            pokemonNameView.text = it.next
         }
     }
 }
