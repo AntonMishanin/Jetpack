@@ -10,5 +10,7 @@ data class PokemonDbEntity(
     var name: String = "",
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id")
-    var id: Int? = null
+    var id: Int? = null,
+
+    var pokemonResult: List<PokemonResultNetwork> = ArrayList()
 )
