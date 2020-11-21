@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.myapplication.domain.entity.PokemonDbEntity
 
-@Database(entities = [PokemonDbEntity::class], version = 5, exportSchema = false)
+@Database(entities = [PokemonDbEntity::class], version = 8, exportSchema = false)
 abstract class PokemonDatabase :RoomDatabase(){
     abstract fun getPokemonDao(): PokemonDao
 

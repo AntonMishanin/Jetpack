@@ -1,6 +1,7 @@
 package com.example.myapplication.domain.entity
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,9 +9,10 @@ import androidx.room.PrimaryKey
 data class PokemonDbEntity(
     @ColumnInfo(name = "name")
     var name: String = "",
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int? = null,
+    var id: Int? = null
 
-    var pokemonResult: List<PokemonResultNetwork> = ArrayList()
+    //@Embedded
+    //var pokemonResult: List<PokemonResultNetwork> = ArrayList()
 )

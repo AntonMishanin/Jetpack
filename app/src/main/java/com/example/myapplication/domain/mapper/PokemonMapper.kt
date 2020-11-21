@@ -8,9 +8,9 @@ class PokemonMapper {
 
     fun getDbPokemonFromNetwork(pokemonNetwork: PokemonNetworkEntity): PokemonDbEntity {
         val pokemonDb = PokemonDbEntity()
-        pokemonDb.id = 0
+        pokemonDb.id = 1
         pokemonDb.name = pokemonNetwork.next
-        pokemonDb.pokemonResult = pokemonNetwork.results
+        //pokemonDb.pokemonResult = pokemonNetwork.results
 
         return pokemonDb
     }

@@ -14,6 +14,7 @@ class PokemonListViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
 
     fun setRepository(repository: Repository) {
         this.repository = repository
+        repository.getAll()
         user = repository.requestPokemonList()
     }
 
